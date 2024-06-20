@@ -5,16 +5,9 @@
 
 #include <vk_types.h>
 
-class VulkanEngine {
+class VulkanEngine 
+{
 public:
-
-	bool _isInitialized{ false };
-	int _frameNumber {0};
-	bool stop_rendering{ false };
-	VkExtent2D _windowExtent{ 1700 , 900 };
-
-	struct SDL_Window* _window{ nullptr };
-
 	static VulkanEngine& Get();
 
 	//initializes everything in the engine
@@ -28,4 +21,11 @@ public:
 
 	//run main loop
 	void run();
+public:
+	bool isInitialized{ false };
+	int frameNumber{ 0 };
+	bool stopRendering{ false };
+	VkExtent2D windowExtent{ 1700 , 900 };
+
+	struct SDL_Window* window{ nullptr };
 };
